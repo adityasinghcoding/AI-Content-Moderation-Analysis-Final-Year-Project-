@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Moderation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="shortcut icon" href="../static/img/cc.png" type="image/x-icon">
+    <style>
+        /* Custom styles */
+        .btn-use-now {
+            transition: all 0.3s ease;
+        }
+        .btn-use-now:hover {
+            background-color: #4CAF50; /* Change to your desired hover color */
+        }
+        .btn-use-now:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Header Section -->
+    <header class="container mx-auto py-5 flex flex-wrap items-center justify-between">
+        <a class="flex items-center text-xl font-medium" href="">
+            <img class="h-8 mr-2" src="../static/img/cc.png" alt="">
+            AI Content Moderation Analysis (ACMA)
+        </a>
+        <nav class="md:ml-auto flex items-center space-x-5">
+            <a class="hover:text-gray-700" href="index.html">Home</a>
+            <a class="hover:text-gray-700" href="aboutus.html">About Us</a>
+            <a class="hover:text-gray-700" href="predict.html">Classify</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-5 py-24 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 md:pr-12 mb-8 md:mb-0">
+            <h1 class="text-4xl font-medium mb-4">Keep your online platforms secure with our advanced AI Content Moderation System (ACMS)</h1>
+            <p class="leading-relaxed mb-8">Online moderation systems enforce community rules, legal compliance, and ethical standards while respecting privacy and freedom of expression.</p>
+            <a href="predict.html" class="inline-block py-3 px-8 bg-green-500 text-white rounded-lg shadow-lg hover:bg-green-600 transition duration-300 btn-use-now">Use Now</a>
+        </div>
+        <div class="md:w-1/2">
+            <img class="w-full rounded-lg" src="../static/img/hero.jpg" alt="Hero Image">
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="container mx-auto px-5 py-20">
+        <h2 class="text-3xl font-medium mb-12 text-center">Why Use Content Moderation System?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-green-100 mb-5">
+                    <svg class="w-10 h-10 text-green-500" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-medium mb-3">Upholding Community Guidelines</h3>
+                <p class="text-gray-700 text-center">Enforce platform-specific rules for a respectful online environment.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-green-100 mb-5">
+                    <svg class="w-10 h-10 text-green-500" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-medium mb-3">Maintain Safety</h3>
+                <p class="text-gray-700 text-center">Ensure a secure online environment by monitoring and controlling content.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-green-100 mb-5">
+                    <svg class="w-10 h-10 text-green-500" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-medium mb-3">Ethical Standards</h3>
+                <p class="text-gray-700 text-center">Adhere to principles of fairness, impartiality, and privacy in content moderation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container mx-auto px-5 py-20">
+        <h2 class="text-3xl font-medium mb-12 text-center">Testimonials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-gray-700 leading-relaxed mb-6">I greatly appreciate the platform's unwavering commitment to upholding legal compliance and adhering to high ethical standards. It instills a strong sense of confidence in me regarding the content I encounter here.</p>
+                <div class="flex items-center">
+                    <img class="w-12 h-12 rounded-full mr-4" src="../static/img/adi.png" alt="Aditya Singh">
+                    <div>
+                        <h3 class="text-lg font-medium">Aditya Singh</h3>
+                        <p class="text-gray-500">Music Producer | Trader | YouTuber</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-gray-700 leading-relaxed mb-6">Content moderation has been a game-changer for my experience on this platform. I now feel significantly safer and more at ease while using it.</p>
+                <div class="flex items-center">
+                    <img class="w-12 h-12 rounded-full mr-4" src="../static/img/av.png" alt="Ayush Vishnoi">
+                    <div>
+                        <h3 class="text-lg font-medium">Ayush Vishnoi</h3>
+                        <p class="text-gray-500">Tiktoker Influencer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-gray-700 body-font">
+        <div class="container mx-auto py-8 px-5 flex flex-col sm:flex-row items-center">
+            <a class="flex items-center justify-center sm:justify-start mb-4 sm:mb-0" href="/">
+                <img class="h-8 mr-2" src="../static/img/cc.png" alt="">
+                <span class="text-xl">AI Content Moderation System (ACMS)</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-auto sm:border-l sm:pl-4 sm:py-2 sm:mt-0 mt-4">&copy; 2023-2024 ACMS — <a href="https://www.instagram.com/ayush_sharma0011/?igshid=MzMyNGUyNmU2YQ%3D%3D" class="text-gray-600" target="_blank" rel="noopener noreferrer">@HAAA</a></p>
+            <div class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500" href="#">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" viewBox="0 0 24 24">
+                        <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4.5 8-10V5l-8-3-8 3v7c0 5.5 8 10 8 10z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
