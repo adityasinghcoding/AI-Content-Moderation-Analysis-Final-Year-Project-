@@ -1,0 +1,91 @@
+.result
+{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    font-weight: bold;
+}
+.align
+{
+    text-align: center;
+}
+.health{
+    display: inline;
+    font-size: 25px;
+}
+.answer
+{
+    display: inline;
+    color: brown;
+    font-weight: bold;
+    font-size: 25px;
+}
+span
+{
+    padding-left: 20px;
+    font-size: 20px;
+}
+.disease_name
+{
+    padding-left: 20px;
+    color: red;
+    font-weight: bold;
+}
+.confidence
+{
+    padding-left: 20px;
+    color: green;
+    font-weight: bold;
+}
+.disease
+{
+    padding-left: 20px;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+.cure
+{
+    padding-left: 20px;
+    
+}
+.cure ul {
+    list-style-type: disc; 
+    margin-left: 20px;    
+}
+.cure ul li
+{
+    padding: 3px 0px;
+}
+.cure_links
+{
+    padding-left: 20px;
+}
+.cure_links p{
+    font-weight: bold;
+}
+.cure_links ul
+{
+    list-style-type:disc; 
+    text-decoration: underline;
+    margin-left: 20px;
+    padding: 10px;
+}
+.cure_links ul li{
+    padding: 3px 0px;
+}
+#bt
+{
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#center
+{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
