@@ -7,4 +7,4 @@ An AI-driven content moderation system named ACMA to detect and analyze toxicity
 
   **Link**
 
-  .[Drive](https://drive.google.com/drive/u/0/folders/1CDdlclL76CC-JeheTjV6Bn1hgLfL7y6Z)
+  [Drive](https://drive.google.com/drive/u/0/folders/1CDdlclL76CC-JeheTjV6Bn1hgLfL7y6Z)
