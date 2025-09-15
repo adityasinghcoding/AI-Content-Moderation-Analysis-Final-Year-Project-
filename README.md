@@ -34,8 +34,6 @@ ACMA is an advanced AI-driven content moderation system designed to detect and a
 
 ## Project Structure
 
-> _Note: Update the below structure and add descriptions for each main file/folder as needed._
-
 ```
 /AI-Content-Moderation-Analysis-Final-Year-Project-
 │
