@@ -39,13 +39,10 @@ ACMA is an advanced AI-driven content moderation system designed to detect and a
 │
 ├── README.md                # Project documentation
 ├── requirements.txt         # Python dependencies
-├── app/                     # Flask web server and API code
-├── models/                  # Pre-trained model files and model-related code
-├── data/                    # Sample data for testing (text, images, etc.)
-├── utils/                   # Utility scripts (preprocessing, helpers)
-├── notebooks/               # Jupyter notebooks for exploration and prototyping
-├── static/                  # Static files for web interface (if any)
-└── ...                      # Other files and directories
+├── app.py                     # Main code
+├── models                  # Pre-trained model files and model-related code
+├── uploads/                    # Sample data for testing (text, images, audio, video, etc.)
+└── static/                  # Static files for web interface (if any)
 ```
 
 ---
