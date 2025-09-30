@@ -1,4 +1,167 @@
-# AI Content Moderation Analysis (Final Year Project)
-An AI-driven content moderation system named ACMA to detect and analyze toxicity, inappropriate visuals, and violence in text, images, audio and video. 
+# AI Content Moderation Analysis (ACMA)
 
-● Python, Tensor Flow, Keras, OpenCV, EasyOCR, NLTK, Flask, scikit-learn.
+## Overview
+
+ACMA (AI Content Moderation Analysis) is an advanced AI-driven content moderation system designed to detect and analyze toxicity, inappropriate visuals, violence, and other harmful content in various media types including text, images, audio, and video. This system helps maintain safe online environments by enforcing community guidelines, legal compliance, and ethical standards while respecting user privacy and freedom of expression.
+
+This project was developed as a final year project to demonstrate the application of machine learning and computer vision techniques in content moderation.
+
+## Features
+
+### Multi-Modal Content Analysis
+- **Text Moderation**: Detects toxic language and analyzes sentiment using NLP techniques
+- **Image Moderation**: Extracts text from images using OCR and classifies visual content for inappropriate material (porn, hentai, sexy content) and violence detection
+- **Audio Moderation**: Transcribes speech to text and analyzes for toxicity
+- **Video Moderation**: Processes video frames to detect nudity, violence, and toxic content in audio tracks
+
+### Key Capabilities
+- Toxicity detection using machine learning classifiers
+- Image classification for NSFW content using deep learning models
+- Violence detection in images and videos
+- OCR (Optical Character Recognition) for text extraction from images
+- Speech-to-text conversion for audio analysis
+- Sentiment analysis for text content
+- Real-time content analysis through web interface
+
+## Technologies Used
+
+- **Backend**: Python Flask
+- **Machine Learning**: TensorFlow, Keras, scikit-learn
+- **Computer Vision**: OpenCV, EasyOCR
+- **Natural Language Processing**: NLTK
+- **Audio Processing**: SpeechRecognition, MoviePy
+- **Frontend**: HTML, CSS (Tailwind CSS), JavaScript
+- **Data Processing**: NumPy, Joblib
+
+## Project Structure
+
+```
+├── app.py                          # Main Flask application
+├── toxicity_classifier.pkl         # Trained toxicity detection model
+├── tfidf_vectorizer.pkl            # TF-IDF vectorizer for text processing
+├── IMG_MODEL.299x299.h5            # Image & Video classification model
+├── VIOLENCE_DETECTION.h5           # Violence detection model
+├── template/                       # HTML templates
+│   ├── index.html                  # Home page
+│   ├── predict.html                # Content analysis interface
+│   └── aboutus.html                # About page
+├── static/                         # Static assets
+│   ├── img/                        # Images and icons
+│   ├── scripts/                    # JavaScript files
+│   └── styles/                     # CSS stylesheets
+└── uploads/                        # Directory for uploaded files
+```
+
+## How It Works
+
+### Text Analysis
+1. Input text is preprocessed (removing special characters)
+2. Features are extracted using TF-IDF vectorization
+3. Toxicity classifier predicts if content is toxic
+4. Sentiment analysis determines positive/negative/neutral sentiment
+
+### Image Analysis
+1. OCR extracts any text from the image
+2. Extracted text is analyzed for toxicity
+3. Image is classified using deep learning model for inappropriate content
+4. Violence detection model checks for violent content
+5. Content is flagged as "Cannot be published" if any checks fail
+
+### Audio Analysis
+1. Speech recognition converts audio to text
+2. Transcribed text is analyzed for toxicity using the same text pipeline
+
+### Video Analysis
+1. Video frames are extracted at regular intervals
+2. Each frame is analyzed for nudity/inappropriate content
+3. Audio track is extracted and analyzed for toxicity
+4. Video is flagged if any frame or audio contains prohibited content
+
+## Installation and Setup
+
+### Prerequisites
+- Python 3.7+
+- pip package manager
+
+### Dependencies
+Install the required packages:
+
+```bash
+pip install flask tensorflow keras easyocr opencv-python speechrecognition joblib numpy nltk moviepy scikit-learn
+```
+
+### NLTK Data
+Download required NLTK data:
+
+```python
+import nltk
+nltk.download('vader_lexicon')
+```
+
+### Model Files
+Ensure all model files are present in the root directory:
+- `toxicity_classifier.pkl`
+- `tfidf_vectorizer.pkl`
+- `IMG_MODEL.299x299.h5`
+- `VIOLENCE_DETECTION.h5`
+
+## Usage
+
+### Running the Application
+1. Clone or download the project
+2. Install dependencies as described above
+3. Run the Flask application:
+
+```bash
+python app.py
+```
+
+4. Open your browser and navigate to `http://localhost:5000`
+
+### Using the Web Interface
+1. **Home Page**: Overview of the system and its features
+2. **Classify Page**: Upload content for analysis
+   - Enter text directly or upload files (images, audio, video)
+   - Click "Test" to analyze the content
+   - View results showing detected text and toxicity status
+
+### API Usage
+The system provides a REST API endpoint:
+
+**POST** `/detect_toxicity`
+
+Parameters:
+- `text` (optional): Text content to analyze
+- `file` (optional): File upload (image, audio, or video)
+
+Response format:
+```json
+{
+  "text": "extracted or input text",
+  "toxicity_result": "Toxic/Non-Toxic/Cannot be published"
+}
+```
+
+## Vision and Goals
+
+The vision of ACMA is to create safer online communities by:
+- Maintaining user safety and well-being
+- Enforcing community guidelines
+- Ensuring legal compliance
+- Protecting privacy and ethical standards
+- Leveraging AI and machine learning for efficient moderation
+- Balancing content control with freedom of expression
+
+## Contact Information
+
+**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi 
+**Email**: aayushsharma00121@gmail.com
+**Location**: MIT, Moradabad, Uttar Pradesh, India
+
+## License
+
+© 2023-Present ACMA - All rights reserved.
+
+---
+
+*This project demonstrates the integration of multiple AI technologies for comprehensive content moderation. For educational and research purposes.*
