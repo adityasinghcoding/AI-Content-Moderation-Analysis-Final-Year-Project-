@@ -155,8 +155,7 @@ The vision of ACMA is to create safer online communities by:
 ## Contact Information
 
 **Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi 
-**Email**: aayushsharma00121@gmail.com
-**Location**: MIT, Moradabad, Uttar Pradesh, India
+**College**: MIT Moradabad, India
 
 ## License
 
