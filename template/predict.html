@@ -1,139 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Content-Moderation</title>    
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../static/img/cc.png" type="image/x-icon">
+  <title>Content-Moderation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../static/img/cc_white.png" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../static/styles/style.css">
+  <link rel="stylesheet" href="../static/styles/style.css" />
   <style>
-    #textInput{
-      display: none;
-    }
-    .dropbox{
+    .dropbox {
       display: flex;
-      flex-direction: column; /* Display buttons and inputs in a column */
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-height: 60vh;
     }
-    .dropbox button,
-    .dropbox input {
-      display: block; /* Display each button and input on a separate line */
-      margin-bottom: 10px; /* Add some spacing between the elements */
+    .btn-use-now {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      color: black;
+      font-weight: 600;
     }
-  </style>
+    .btn-use-now:hover {
+      background-color: #f0f0f0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .btn-use-now:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    #textInput {
+      flex-grow: 1;
+      border: 1px #cccccc;
+      outline: none;
+      padding: 12px 24px 12px 16px;
+      font-size: 1rem;
+      border-radius: 24px;
+      background-color: #ffffff;
+      color: #000000;
+      resize: none;
+      min-height: 48px;
+    }
+    #fileInput {
+      display: none;
+    }
+    .input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+      background-color: #ffffff;
+      border-radius: 24px;
+      padding-right: 48px;
+      border: 1px solid #cccccc;
+      /* box-shadow: inset 0 0 0 1px #000000; */
+    }
+    .file-upload-icon {
+      position: absolute;
+      right: 12px;
+      cursor: pointer;
+      color: #7a7a7a;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+    .file-upload-icon:hover {
+      color: #555555;
+    }
+    .analyze-button {
+      margin-left: 16px;
+      padding: 12px 24px;
+      border-radius: 24px;
+      background-color: #000000;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .analyze-button:hover {
+      background-color: #000000d3;
+    }
+    #result {
+      margin-top: 16px;
+      color: black;
+      max-width: 600px;
+      word-wrap: break-word;
+    }
+    #loading {
+      margin-top: 16px;
+      color: black;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      color: black;
+      padding: 32px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .right-align {
+      text-align: right;
+    }
+</style>
+
   <script src="../static/scripts/script.js"></script>
 </head>
-<body>
+<body class="bg-white text-black min-h-screen m-0 p-0 overflow-x-hidden font-sans">
   <!-- Header Section -->
-  <header class="text-gray-600 body-font">
+  <header class="bg-black body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="index.html">
-        <img class="h-8 mr-2 logo" src="../static/img/cc.png" alt="">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="./index.html">
+        <img class="h-8 mr-2 logo" src="../static/img/cc_white.png" alt="" />
         <span class="ml-3 text-xl">AI Content Moderation Analysis (ACMA)</span>
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
-        <a class="mr-5 hover:text-gray-900" href="aboutus.html">About Us</a>
-        <a class="mr-5 hover:text-gray-900" href="predict.html">Classify</a>
+        <a class="mr-5 text-gray-500 hover:text-white transition duration-300" href="./index.html">Home</a>
+        <a class="mr-5 text-gray-500 hover:text-white transition duration-300" href="./aboutus.html">About Us</a>
+        <!-- <a class="mr-5 hover:text-gray-400 transition duration-300" href="./predict.html">Classify</a> -->
       </nav>
-      </button>
     </div>
   </header>
 
   <!-- Main Content -->
   <div class="container mx-auto p-10">
-    <div class="dropbox"><br><br>
-      <button onclick="showText()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2s px-5 rounded">Enter Text</button>
-      <textarea id="textInput" rows="5" cols="60" placeholder="Write or paste here"></textarea><br>
-      <input type="file" id="fileInput" name="file" accept=""><br>
-      <button onclick="detectToxicity()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2s px-5 rounded">Test</button><br>
-      <div id="result"></div><br>
-      <div id="loading" class="hidden animate-spin">Loading...</div> <!-- Loading animation -->
-    </div>
+    <div class="dropbox">
+      <div class="card">
+        <h2 class="text-3xl font-bold text-black mb-6">Content Moderation Tool</h2>
+        <p class="text-black mb-6">Analyze text, images, audio, or videos for toxicity and inappropriate content.</p>
 
-    <!-- <div class="mt-8" id="predictionResult">
-      <p>Prediction result will be displayed here</p>
-    </div> -->
+        <div class="input-container">
+          <textarea id="textInput" placeholder="Write or paste your text here..."></textarea>
+          <input type="file" id="fileInput" name="file" accept="" />
+          <label for="fileInput" class="file-upload-icon" title="Upload file" tabindex="0" role="button" aria-label="Upload file">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+            </svg>
+          </label>
+          <button class="analyze-button" onclick="detectToxicity()">Analyze</button>
+        </div>
+
+        <div id="result"></div>
+        <div id="loading" class="hidden animate-spin">Analyzing...</div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
-  <footer class="text-gray-600 body-font">
+  <footer class="text-white body-font bg-black">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="index.html">
-        <img class="h-8 mr-2 logo" src="../static/img/cc.png" alt="">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white" href="./index.html">
+        <img class="h-8 mr-2 logo" src="../static/img/cc_white.png" alt="" />
         <span class="ml-3 text-xl">AI Content Moderation Analysis (ACMA)</span>
       </a>
-      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023-2024 ACMS —
-        <a href="https://www.instagram.com/ayush_sharma0011/?igshid=MzMyNGUyNmU2YQ%3D%3D" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@HAAA</a>
+      <p class="right-align text-white sm:ml-4">
+        © 2023-2024 ACMS — @HAAA
       </p>
-      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-        <a class="text-gray-500">
+      <!-- <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-white">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
           </svg>
         </a>
-        <a class="ml-3 text-gray-500">
+        <a class="ml-3 text-white">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
           </svg>
         </a>
-        <a class="ml-3 text-gray-500">
+        <a class="ml-3 text-white">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
           </svg>
         </a>
-        <a class="ml-3 text-gray-500">
+        <a class="ml-3 text-white">
           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24 24">
-            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" stroke="none" />
           </svg>
-        </a>
+        </a> -->
       </span>
     </div>
   </footer>
 
-  <!-- JavaScript to display file path -->
   <script>
-    function showText(){
-      const textInput=document.getElementById('textInput');
-      textInput.style.display = 'block';
-    }
     function detectToxicity() {
-        const text = document.getElementById("textInput").value;
-        const fileInput = document.getElementById("fileInput");
-        const file = fileInput.files.length > 0 ? fileInput.files[0] : null;
+      const text = document.getElementById("textInput").value;
+      const fileInput = document.getElementById("fileInput");
+      const file = fileInput.files.length > 0 ? fileInput.files[0] : null;
 
-        const formData = new FormData();
-        formData.append("text", text);
-        if(file){
-            formData.append("file", file);
-        }
-        fetch('/detect_toxicity', {
-            method: 'POST',
-            body: formData
+      const formData = new FormData();
+      formData.append("text", text);
+      if (file) {
+        formData.append("file", file);
+      }
+      fetch("/detect_toxicity", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          displayResult(data);
         })
-        .then(response => response.json())
-        .then(data => {
-            displayResult(data);
-        })
-        .catch(error => console.error('Error:', error));
+        .catch((error) => console.error("Error:", error));
     }
 
     function displayResult(data) {
-        let resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = "";
+      let resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
 
-        if (data.error) {
-            resultDiv.innerHTML = `<p>Error: ${data.error}</p>`;
-        } else {
-            resultDiv.innerHTML = `
-                <p>Text: ${data.text}</p>
-                <p>Toxicity Result: ${data.toxicity_result}</p>
+      if (data.error) {
+        resultDiv.innerHTML = `<p class="text-red-300">Error: ${data.error}</p>`;
+      } else {
+        resultDiv.innerHTML = `
+                <p class="mb-2"><strong>Text:</strong> ${data.text}</p>
+                <p class="text-lg font-semibold ${
+                  data.toxicity_result.includes("Toxic") ||
+                  data.toxicity_result.includes("Cannot")
+                    ? "text-red-300"
+                    : "text-green-300"
+                }"><strong>Toxicity Result:</strong> ${data.toxicity_result}</p>
             `;
-        }
+      }
     }
   </script>
 </body>

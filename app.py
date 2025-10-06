@@ -37,6 +37,10 @@ def home():
 def predict():
     return render_template('predict.html')
 
+@app.route('/aboutus.html')
+def aboutus():
+    return render_template('aboutus.html')
+
 def detect_violence(image_path):
     img=image.load_img(image_path,target_size=(224,224))
     img_array=image.img_to_array(img)

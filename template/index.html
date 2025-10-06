@@ -1,35 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Moderation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="shortcut icon" href="../static/img/cc.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="shortcut icon" href="../static/img/cc_white.png" type="image/x-icon" />
     <style>
-        /* Custom styles */
+        /* Custom styles for black & white theme */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
         .btn-use-now {
             transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+            text-decoration: none;
         }
         .btn-use-now:hover {
-            background-color: #4CAF50; /* Change to your desired hover color */
+            background-color: #333333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         .btn-use-now:active {
             transform: scale(0.95);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        header a {
+            color: #ffffff;
+        }
+        header a:hover {
+            color: #cccccc;
+        }
+        nav a {
+            transition: color 0.3s ease;
+        }
+        section h1, section h2, section h3 {
+            color: #000000;
+        }
+        section p {
+            color: #222222;
+        }
+        .bg-green-100 {
+            background-color: #f0f0f0 !important;
+        }
+        .text-green-500 {
+            color: #000000 !important;
+        }
+        .bg-white {
+            background-color: #ffffff !important;
+        }
+        .text-gray-700, .text-gray-600 {
+            color: #000000 !important;
+        }
+        .bg-gray-200 {
+            background-color: #000000 !important;
+        }
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        footer a {
+            color: #ffffff;
+        }
+        footer a:hover {
+            color: #cccccc;
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .rounded-lg {
+            border-radius: 0.75rem;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body>
     <!-- Header Section -->
-    <header class="container mx-auto py-5 flex flex-wrap items-center justify-between">
-        <a class="flex items-center text-xl font-medium" href="">
-            <img class="h-8 mr-2" src="../static/img/cc.png" alt="">
+    <header class="bg-black fixed w-full top-0 left-0 z-50 py-5 flex flex-wrap items-center justify-between px-5">
+        <a class="flex items-center text-xl font-medium text-white" href="/">
+            <img class="h-8 mr-2" src="../static/img/cc_white.png" alt="Logo" />
             AI Content Moderation Analysis (ACMA)
         </a>
-        <nav class="md:ml-auto flex items-center space-x-5">
-            <a class="hover:text-gray-700" href="index.html">Home</a>
-            <a class="hover:text-gray-700" href="aboutus.html">About Us</a>
-            <a class="hover:text-gray-700" href="predict.html">Classify</a>
+        <nav class="md:ml-auto flex items-center space-x-5 text-white">
+            <!-- <a class="hover:text-gray-400" href="./index.html">Home</a> -->
+            <a class="text-gray-500 hover:text-white" href="./aboutus.html">About Us</a>
+            <a class="text-gray-500 hover:text-white" href="./predict.html">Classify</a>
         </nav>
     </header>
 
@@ -38,10 +102,10 @@
         <div class="md:w-1/2 md:pr-12 mb-8 md:mb-0">
             <h1 class="text-4xl font-medium mb-4">Keep your online platforms secure with our advanced AI Content Moderation System (ACMS)</h1>
             <p class="leading-relaxed mb-8">Online moderation systems enforce community rules, legal compliance, and ethical standards while respecting privacy and freedom of expression.</p>
-            <a href="predict.html" class="inline-block py-3 px-8 bg-green-500 text-white rounded-lg shadow-lg hover:bg-green-600 transition duration-300 btn-use-now">Use Now</a>
+            <a href="predict.html" class="btn-use-now">Use Now</a>
         </div>
         <div class="md:w-1/2">
-            <img class="w-full rounded-lg" src="../static/img/hero.jpg" alt="Hero Image">
+            <img class="w-full rounded-lg" src="../static/img/hero.jpg" alt="Hero Image" />
         </div>
     </section>
 
@@ -86,7 +150,7 @@
             <div class="bg-white p-8 rounded-lg shadow-md">
                 <p class="text-gray-700 leading-relaxed mb-6">I greatly appreciate the platform's unwavering commitment to upholding legal compliance and adhering to high ethical standards. It instills a strong sense of confidence in me regarding the content I encounter here.</p>
                 <div class="flex items-center">
-                    <img class="w-12 h-12 rounded-full mr-4" src="../static/img/adi.png" alt="Aditya Singh">
+                    <img class="w-12 h-12 rounded-full mr-4" src="../static/img/adi.png" alt="Aditya Singh" />
                     <div>
                         <h3 class="text-lg font-medium">Aditya Singh</h3>
                         <p class="text-gray-500">Music Producer | Trader | YouTuber</p>
@@ -96,7 +160,7 @@
             <div class="bg-white p-8 rounded-lg shadow-md">
                 <p class="text-gray-700 leading-relaxed mb-6">Content moderation has been a game-changer for my experience on this platform. I now feel significantly safer and more at ease while using it.</p>
                 <div class="flex items-center">
-                    <img class="w-12 h-12 rounded-full mr-4" src="../static/img/av.png" alt="Ayush Vishnoi">
+                    <img class="w-12 h-12 rounded-full mr-4" src="../static/img/av.png" alt="Ayush Vishnoi" />
                     <div>
                         <h3 class="text-lg font-medium">Ayush Vishnoi</h3>
                         <p class="text-gray-500">Tiktoker Influencer</p>
@@ -107,32 +171,34 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 text-gray-700 body-font">
-        <div class="container mx-auto py-8 px-5 flex flex-col sm:flex-row items-center">
+    <footer>
+        <div class="container mx-auto py-8 px-5 flex flex-col sm:flex-row items-center bg-black text-white">
             <a class="flex items-center justify-center sm:justify-start mb-4 sm:mb-0" href="/">
-                <img class="h-8 mr-2" src="../static/img/cc.png" alt="">
+                <img class="h-8 mr-2" src="../static/img/cc_white.png" alt="Logo" />
                 <span class="text-xl">AI Content Moderation System (ACMS)</span>
             </a>
-            <p class="text-sm text-gray-500 sm:ml-auto sm:border-l sm:pl-4 sm:py-2 sm:mt-0 mt-4">&copy; 2023-2024 ACMS — <a href="https://www.instagram.com/ayush_sharma0011/?igshid=MzMyNGUyNmU2YQ%3D%3D" class="text-gray-600" target="_blank" rel="noopener noreferrer">@HAAA</a></p>
-            <div class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                <a class="text-gray-500" href="#">
+            <p class="text-sm sm:ml-auto sm:border-l sm:pl-4 sm:py-2 sm:mt-0 mt-4">
+                &copy; 2023-2024 ACMS — <a href="https://www.instagram.com/ayush_sharma0011/?igshid=MzMyNGUyNmU2YQ%3D%3D" target="_blank" rel="noopener noreferrer" class="text-white">@HAAA</a>
+            </p>
+            <div class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start space-x-4">
+                <a href="#" class="text-white">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                     </svg>
                 </a>
-                <a class="ml-3 text-gray-500" href="#">
+                <a href="#" class="text-white">
                     <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                     </svg>
                 </a>
-                <a class="ml-3 text-gray-500" href="#">
-                    <svg class="w-5 h-5" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" viewBox="0 0 24 24">
+                <a href="#" class="text-white">
+                    <svg class="w-5 h-5" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" viewBox="0 0 24 24 24">
                         <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
                         <circle cx="4" cy="4" r="2" stroke="none"></circle>
                     </svg>
                 </a>
-                <a class="ml-3 text-gray-500" href="#">
-                    <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                <a href="#" class="text-white">
+                    <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24 24">
                         <path d="M12 22s8-4.5 8-10V5l-8-3-8 3v7c0 5.5 8 10 8 10z"></path>
                     </svg>
                 </a>
