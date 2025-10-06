@@ -129,6 +129,12 @@ graph TD
 - Python 3.7+
 - pip package manager
 
+### System Requirements
+- **Hardware**: Windows 10 or higher, 8 GB RAM at least, CPU of 2 GHz or higher frequency, GPU is recommended for fast performance, HDD/SSD 500 GB.
+- **Software**: Python version 3.11.5 (recommended) or higher and TensorFlow version 2.12.0 (recommended).
+- **Libraries**: flask, tensorflow, keras, easyocr, opencv, re, speech_recognition, joblib, numpy, nltk, moviepy.
+- **IDE**: VS Code or Python IDE for running the project.
+
 ### Dependencies
 Install the required packages using the provided requirements.txt file:
 
@@ -154,15 +160,15 @@ Ensure all model files are present in the root directory:
 ## Usage
 
 ### Running the Application
-1. Clone or download the project
-2. Install dependencies as described above
-3. Run the Flask application:
-
+1. Open the project folder (ACMA).
+2. Right-click and open VS Code.
+3. Run the Flask application in terminal:
 ```bash
 python app.py
 ```
-
-4. Open your browser and navigate to `http://localhost:5000`
+4. 'Ctrl + Click' & 'Follow the link':
+`http://localhost:5000`
+5. You will be directed to the ACMA front end where you can analyze the content.
 
 ### Using the Web Interface
 1. **Home Page**: Overview of the system and its features
@@ -198,9 +204,13 @@ The vision of ACMA is to create safer online communities by:
 - Leveraging AI and machine learning for efficient moderation
 - Balancing content control with freedom of expression
 
+## Content Disclaimer
+
+This project may contain explicit language, adult themes, or sensitive material, including audio, video, images, and text. Such content is included solely for testing purposes within the project.
+
 ## Contact Information
 
-**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi 
+**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi
 **College**: MIT Moradabad, India
 
 ## License
