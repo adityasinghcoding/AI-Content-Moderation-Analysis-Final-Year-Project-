@@ -36,7 +36,7 @@ This project was developed as a final year project to demonstrate the applicatio
 ## Project Workflow Diagram
 ```mermaid
 graph TD
-  A[User Input: Text, Image, Audio, or Video] --> B{Input Type?}
+  A[User Input: Text, Image, Audio, or  Video] --> B{Input Type?}
 
   B -->|Text| C[Preprocess Text <br/> Remove special characters]
   C --> D[TF-IDF Vectorization]
