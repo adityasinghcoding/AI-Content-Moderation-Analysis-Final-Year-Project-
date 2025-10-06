@@ -1,4 +1,8 @@
-# AI Content Moderation Analysis (ACMA)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/adityasinghcoding/AI-Content-Moderation-Analysis-Final-Year-Project-/main/static/img/cc2.png" alt="AI Content Moderation" width=400/>
+</p>
+
+<h1 align=center>AI Content Moderation Analysis (ACMA)<h1/>
 
 ## Overview
 
