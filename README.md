@@ -1,13 +1,14 @@
-# AI Content Moderation Analysis (ACMA)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/adityasinghcoding/AI-Content-Moderation-Analysis-Final-Year-Project-/main/static/img/cc2.png" alt="AI Content Moderation" width=400/>
+</p>
+<h1 align=center><b>AI Content Moderation Analysis <i>(ACMA)</i><b></h1>
 
 ## Overview
-
 ACMA (AI Content Moderation Analysis) is an advanced AI-driven content moderation system designed to detect and analyze toxicity, inappropriate visuals, violence, and other harmful content in various media types including text, images, audio, and video. This system helps maintain safe online environments by enforcing community guidelines, legal compliance, and ethical standards while respecting user privacy and freedom of expression.
 
 This project was developed as a final year project to demonstrate the application of machine learning and computer vision techniques in content moderation.
 
 ## Features
-
 ### Multi-Modal Content Analysis
 - **Text Moderation**: Detects toxic language and analyzes sentiment using NLP techniques
 - **Image Moderation**: Extracts text from images using OCR and classifies visual content for inappropriate material (porn, hentai, sexy content) and violence detection
@@ -210,7 +211,7 @@ This project may contain explicit language, adult themes, or sensitive material,
 
 ## Contact Information
 
-**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi
+**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi <br/>
 **College**: MIT Moradabad, India
 
 ## License
