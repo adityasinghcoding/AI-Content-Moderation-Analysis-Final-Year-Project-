@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/adityasinghcoding/AI-Content-Moderation-Analysis-Final-Year-Project-/main/static/img/cc2.png" alt="AI Content Moderation" width=400/>
+  <img src="https://raw.githubusercontent.com/adityasinghcoding/AI-Content-Moderation-Analysis-Final-Year-Project-/main/static/img/cc_white.png" alt="AI Content Moderation" width=400/>
 </p>
 <h1 align=center><b>AI Content Moderation Analysis <i>(ACMA)</i><b></h1>
 
