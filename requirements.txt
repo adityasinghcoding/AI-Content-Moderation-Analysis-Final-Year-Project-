@@ -1,0 +1,10 @@
+flask
+tensorflow
+keras
+easyocr
+opencv-python
+speechrecognition
+joblib
+numpy
+nltk
+moviepy

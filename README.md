@@ -130,10 +130,10 @@ graph TD
 - pip package manager
 
 ### Dependencies
-Install the required packages:
+Install the required packages using the provided requirements.txt file:
 
 ```bash
-pip install flask tensorflow keras easyocr opencv-python speechrecognition joblib numpy nltk moviepy scikit-learn
+pip install -r requirements.txt
 ```
 
 ### NLTK Data
