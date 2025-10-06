@@ -210,7 +210,7 @@ This project may contain explicit language, adult themes, or sensitive material,
 
 ## Contact Information
 
-**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi
+**Developers**: Aditya Singh, Harshit Saxena, Ayush Sharma, Ayush Vishnoi <br/>
 **College**: MIT Moradabad, India
 
 ## License
