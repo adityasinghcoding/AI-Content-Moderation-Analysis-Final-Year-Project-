@@ -33,6 +33,52 @@ This project was developed as a final year project to demonstrate the applicatio
 - **Frontend**: HTML, CSS (Tailwind CSS), JavaScript
 - **Data Processing**: NumPy, Joblib
 
+## Project Workflow Diagram
+```mermaid
+graph TD
+  A[User Input: Text, Image, Audio, or Video] --> B{Input Type?}
+
+  B -->|Text| C[Preprocess Text <br/> Remove special characters]
+  C --> D[TF-IDF Vectorization]
+  D --> E[Toxicity Classifier <br/> Predict Toxic/Non-Toxic]
+  E --> F[Sentiment Analysis <br/> Positive/Negative/Neutral]
+  F --> G[Return Result]
+
+  B -->|Image| H[OCR Text Extraction <br/> From Image]
+  H --> I[Preprocess Extracted Text]
+  I --> J[TF-IDF Vectorization]
+  J --> K[Toxicity Check on Text]
+  K --> L[Image Classification <br/> NSFW Detection <br/> porn/hentai/sexy]
+  L --> M[Violence Detection <br/> in Image]
+  M --> N{All Checks Pass ?}
+  N -->|Yes| O[Return: Can be published]
+  N --> |No| P[Return: Cannot be published]
+  O --> G
+  P --> G
+
+  B --> |Audio| Q[Speech to Text <br/> Transcription]
+  Q --> R[Preprocess Transcribed Text]
+  R --> S[TF-IDF Vectorization]
+  S --> T[Toxicity Classifier]
+  T --> G
+
+  B --> |Video| U[Extract Frames <br/> Every 3 seconds]
+  U --> V[Classify Each Frame <br/> NSFW Detection]
+  V --> W[Calculate Average <br/> NSFW Percentages]
+  W --> X[Extract Audio Track]
+  X --> Y[Speech to Text <br/> Transcription]
+  Y --> Z[Preprocess Text]
+  Z --> AA[TF-IDF Vectorization]
+  AA --> BB[Toxicity Check on Audio]
+  BB --> CC{Video Safe?}
+  CC --> |Yes| DD[Can be Published]
+  CC --> |No| EE[Cannot be Published]
+  DD --> G
+  EE --> G
+  
+  G --> FF[Display Result <br/> to User]
+```
+
 ## Project Structure
 
 ```
