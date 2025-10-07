@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 # Installing python dependencies
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Downloading the NLTK data for sentiment analysis
 RUN python -c "import nltk; nltk.download('vader_lexicon')"
