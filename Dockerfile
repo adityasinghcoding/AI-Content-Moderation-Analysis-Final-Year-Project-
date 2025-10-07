@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Setting the working directory inside container
-WORKDIR /app
+WORKDIR /acma
 
 # Installing system dependencies needed for OpenCV, TesnorFlow, etc.
 RUN apt-get update && apt-get install -y \
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 # Installing python dependencies
-RUN pip install -r requirements.txt
+RUN --mount=type=cache, target=/root/.cache/pip pip install --no-cache-dir -r requirements.txt
 
 # Downloading the NLTK data for sentiment analysis
 RUN python -c "import nltk; nltk.download('vader_lexicon')"
